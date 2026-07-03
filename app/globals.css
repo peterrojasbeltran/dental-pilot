@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F8FAFC;
+  --surface: #FFFFFF;
+  --ink: #0F172A;
+  --muted: #475569;
+  --primary: #2563EB;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.input {
+  @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-4 focus:ring-blue-100;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white transition hover:bg-primaryHover disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:bg-slate-50;
+}
+
+.card {
+  @apply rounded-2xl border border-slate-200 bg-white shadow-soft;
+}
+
+/* Dental Pilot v2.0.3: sidebar desktop sin parpadeo visual al recordar preferencia. */
+.dp-sidebar { width: 18rem; }
+html[data-dp-sidebar-collapsed="true"] .dp-sidebar { width: 5rem; }
+html[data-dp-sidebar-collapsed="true"] .dp-sidebar-label { display: none; }
+html[data-dp-sidebar-collapsed="true"] .dp-sidebar-navlink { justify-content: center; }
